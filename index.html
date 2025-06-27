@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #3a7bd5, #00d2ff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .forgot-password a {
+      color: #3a7bd5;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #3a7bd5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .login-btn:hover {
+      background-color: #2a60a4;
+    }
+
+    .google-btn {
+      margin-top: 1rem;
+      background-color: #db4437;
+      color: white;
+    }
+
+    .google-btn:hover {
+      background-color: #b33629;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email or Username</label>
+        <input type="text" id="email" placeholder="Enter email or username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+      <button type="button" class="login-btn google-btn">Login with Google</button>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+    }
+  </script>
+</body>
+</html>
